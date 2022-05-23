@@ -7,3 +7,7 @@ license = "Apache-2.0"
 edition = "2021"
 keywords = ["utils"]
 repository = "https://github.com/Tipragot/rutil"
+
+[features]
+default = ["std"]
+std = []
