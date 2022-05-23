@@ -1,0 +1,9 @@
+[package]
+name = "rutil"
+version = "0.1.0"
+description = "A library containing utilities for creating programs in rust."
+authors = ["Tipragot <tipragot@gmail.com>"]
+license = "Apache-2.0"
+edition = "2021"
+keywords = ["utils"]
+repository = "https://github.com/Tipragot/rutil"
