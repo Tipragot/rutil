@@ -85,6 +85,188 @@ pub trait Number:
     /// ```
     const ONE: Self;
 
+    /// Converts `self` to an `u8`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_u8(123), 123u8);
+    /// ```
+    fn to_u8(self) -> u8;
+
+    /// Converts `self` to an `i8`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_i8(123), 123i8);
+    /// ```
+    fn to_i8(self) -> i8;
+
+    /// Converts `self` to an `u16`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_u16(123), 123u16);
+    /// ```
+    fn to_u16(self) -> u16;
+
+    /// Converts `self` to an `i16`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_i16(123), 123i16);
+    /// ```
+    fn to_i16(self) -> i16;
+
+    /// Converts `self` to an `u32`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_u32(123), 123u32);
+    /// ```
+    fn to_u32(self) -> u32;
+
+    /// Converts `self` to an `i32`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_i32(123), 123i32);
+    /// ```
+    fn to_i32(self) -> i32;
+
+    /// Converts `self` to an `u64`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_u64(123), 123u64);
+    /// ```
+    fn to_u64(self) -> u64;
+
+    /// Converts `self` to an `i64`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_i64(123), 123i64);
+    /// ```
+    fn to_i64(self) -> i64;
+
+    /// Converts `self` to an `u128`.
+    ///
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_u128(123), 123u128);
+    /// ```
+    fn to_u128(self) -> u128;
+
+    /// Converts `self` to an `i128`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_i128(123), 123i128);
+    /// ```
+    fn to_i128(self) -> i128;
+
+    /// Converts `self` to an `usize`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_usize(123), 123usize);
+    /// ```
+    fn to_usize(self) -> usize;
+
+    /// Converts `self` to an `isize`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_isize(123), 123isize);
+    /// ```
+    fn to_isize(self) -> isize;
+
+    /// Converts `self` to an `f32`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_f32(123), 123f32);
+    /// ```
+    fn to_f32(self) -> f32;
+
+    /// Converts `self` to an `f64`.
+    /// 
+    /// It's equivalent to the `as` operation.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use rutil::number_traits::Number;
+    /// 
+    /// assert_eq!(Number::to_f64(123), 123f64);
+    /// ```
+    fn to_f64(self) -> f64;
+
     /// Calculates the quotient of Euclidean division of `self` by `rhs`.
     /// 
     /// More information in [primitives documentation](https://doc.rust-lang.org/std/#primitives).
@@ -1945,6 +2127,21 @@ macro_rules! impl_unsigned {
             const ZERO: Self = 0;
             const ONE: Self = 1;
 
+            #[inline] fn to_u8(self) -> u8 {self as u8}
+            #[inline] fn to_i8(self) -> i8 {self as i8}
+            #[inline] fn to_u16(self) -> u16 {self as u16}
+            #[inline] fn to_i16(self) -> i16 {self as i16}
+            #[inline] fn to_u32(self) -> u32 {self as u32}
+            #[inline] fn to_i32(self) -> i32 {self as i32}
+            #[inline] fn to_u64(self) -> u64 {self as u64}
+            #[inline] fn to_i64(self) -> i64 {self as i64}
+            #[inline] fn to_u128(self) -> u128 {self as u128}
+            #[inline] fn to_i128(self) -> i128 {self as i128}
+            #[inline] fn to_usize(self) -> usize {self as usize}
+            #[inline] fn to_isize(self) -> isize {self as isize}
+            #[inline] fn to_f32(self) -> f32 {self as f32}
+            #[inline] fn to_f64(self) -> f64 {self as f64}
+
             #[inline] fn div_euclid(self, rhs: Self) -> Self { self.div_euclid(rhs) }
             #[inline] fn rem_euclid(self, rhs: Self) -> Self { self.rem_euclid(rhs) }
             #[inline] fn abs(self) -> Self { self }
@@ -2048,6 +2245,21 @@ macro_rules! impl_signed {
             const ZERO: Self = 0;
             const ONE: Self = 1;
 
+            #[inline] fn to_u8(self) -> u8 {self as u8}
+            #[inline] fn to_i8(self) -> i8 {self as i8}
+            #[inline] fn to_u16(self) -> u16 {self as u16}
+            #[inline] fn to_i16(self) -> i16 {self as i16}
+            #[inline] fn to_u32(self) -> u32 {self as u32}
+            #[inline] fn to_i32(self) -> i32 {self as i32}
+            #[inline] fn to_u64(self) -> u64 {self as u64}
+            #[inline] fn to_i64(self) -> i64 {self as i64}
+            #[inline] fn to_u128(self) -> u128 {self as u128}
+            #[inline] fn to_i128(self) -> i128 {self as i128}
+            #[inline] fn to_usize(self) -> usize {self as usize}
+            #[inline] fn to_isize(self) -> isize {self as isize}
+            #[inline] fn to_f32(self) -> f32 {self as f32}
+            #[inline] fn to_f64(self) -> f64 {self as f64}
+
             #[inline] fn div_euclid(self, rhs: Self) -> Self { self.div_euclid(rhs) }
             #[inline] fn rem_euclid(self, rhs: Self) -> Self { self.rem_euclid(rhs) }
             #[inline] fn abs(self) -> Self { self.abs() }
@@ -2147,6 +2359,21 @@ macro_rules! impl_float {
             const BITS: u32 = $s;
             const ZERO: Self = 0.0;
             const ONE: Self = 1.0;
+
+            #[inline] fn to_u8(self) -> u8 {self as u8}
+            #[inline] fn to_i8(self) -> i8 {self as i8}
+            #[inline] fn to_u16(self) -> u16 {self as u16}
+            #[inline] fn to_i16(self) -> i16 {self as i16}
+            #[inline] fn to_u32(self) -> u32 {self as u32}
+            #[inline] fn to_i32(self) -> i32 {self as i32}
+            #[inline] fn to_u64(self) -> u64 {self as u64}
+            #[inline] fn to_i64(self) -> i64 {self as i64}
+            #[inline] fn to_u128(self) -> u128 {self as u128}
+            #[inline] fn to_i128(self) -> i128 {self as i128}
+            #[inline] fn to_usize(self) -> usize {self as usize}
+            #[inline] fn to_isize(self) -> isize {self as isize}
+            #[inline] fn to_f32(self) -> f32 {self as f32}
+            #[inline] fn to_f64(self) -> f64 {self as f64}
 
             #[inline] fn div_euclid(self, rhs: Self) -> Self { self.div_euclid(rhs) }
             #[inline] fn rem_euclid(self, rhs: Self) -> Self { self.rem_euclid(rhs) }
@@ -2261,6 +2488,21 @@ macro_rules! impl_float {
             const BITS: u32 = $s;
             const ZERO: Self = 0.0;
             const ONE: Self = 1.0;
+
+            #[inline] fn to_u8(self) -> u8 {self as u8}
+            #[inline] fn to_i8(self) -> i8 {self as i8}
+            #[inline] fn to_u16(self) -> u16 {self as u16}
+            #[inline] fn to_i16(self) -> i16 {self as i16}
+            #[inline] fn to_u32(self) -> u32 {self as u32}
+            #[inline] fn to_i32(self) -> i32 {self as i32}
+            #[inline] fn to_u64(self) -> u64 {self as u64}
+            #[inline] fn to_i64(self) -> i64 {self as i64}
+            #[inline] fn to_u128(self) -> u128 {self as u128}
+            #[inline] fn to_i128(self) -> i128 {self as i128}
+            #[inline] fn to_usize(self) -> usize {self as usize}
+            #[inline] fn to_isize(self) -> isize {self as isize}
+            #[inline] fn to_f32(self) -> f32 {self as f32}
+            #[inline] fn to_f64(self) -> f64 {self as f64}
 
             #[inline]
             fn div_euclid(self, rhs: Self) -> Self {
