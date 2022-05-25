@@ -2585,7 +2585,7 @@ macro_rules! impl_float {
             #[inline] fn recip(self) -> Self { self.recip() }
             #[inline] fn to_degrees(self) -> Self { self.to_degrees() }
             #[inline] fn to_radians(self) -> Self { self.to_radians() }
-            #[inline] fn float_signum(self) -> Self { self.signum() }
+            #[inline] fn float_signum(self) -> Self { if self.is_nan() { self } else if self.is_sign_positive() { 1.0 } else { -1.0 } }
             
             #[inline]
             fn floor(self) -> Self {
